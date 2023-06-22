@@ -1,0 +1,60 @@
+#log {
+    width: 800px;
+    height: 300px;
+    margin: 0 auto;
+    border: 5px solid black;
+    border-radius: 7px;
+    overflow-y: scroll;
+    overflow-wrap: anywhere; /* Allow breaking long words */
+    display: flex;
+    flex-direction: column-reverse;
+    padding-right: 25px; /* Add padding-right to the log box */
+  }
+
+  #sendCtrls {
+    width: 235px;
+    margin: 30px auto;
+  }
+
+  .message {
+    margin-bottom: 5px;
+    position: relative;
+  }
+
+  .sent {
+    color: blue;
+    align-self: flex-end;
+    padding-left: 25px;
+    padding-right: 5px;
+    margin: 15px;
+  }
+
+  .received {
+    color: green;
+    align-self: flex-start;
+    padding-right: 25px;
+    padding-left: 5px;
+    margin: 15px;
+  }
+
+  #text {
+    resize: vertical;
+    max-height: 3cm;
+    overflow-y: auto;
+  }
+
+  .you-text {
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: -1em; /* Adjust the top position to move up one line */
+    white-space: pre-wrap; /* Preserve line breaks */
+  }
+
+  .guest-text {
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: -1em; /* Adjust the top position to move up one line */
+    white-space: pre-wrap; /* Preserve line breaks */
+  }

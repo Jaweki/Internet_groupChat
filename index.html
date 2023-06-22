@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="stylesheet" href="./chat.css">
+    <title>WebSockets</title>
+
+  </head>
+  <body>
+
+    <div id="log"></div>
+
+    <div id="sendCtrls">
+      <textarea placeholder="Your message here" id="text"></textarea>
+      <button>Send</button>
+    </div>
+    <script>
+      const logTab = document.getElementById('log');
+
+      function inMessage(messageIn, user) {
+        const receiveDiv = document.createElement('div');
+        receiveDiv.setAttribute('id', 'receiveDiv');
+        receiveDiv.classList.add('message', 'received');
+
+        const guestText = document.createElement('span');
+        guestText.classList.add('guest-text');
+        guestText.textContent = user + ':\n'; // Use '\n' to create a line break
+        receiveDiv.appendChild(guestText);
+
+        const messageText = document.createElement('span');
+        messageText.innerHTML = messageIn;
+        receiveDiv.appendChild(messageText);
+
+        logTab.prepend(receiveDiv);
+        logTab.scrollTop = logTab.scrollHeight;
+      }
+
+      function outMessage(messageOut) {
+        const sendDiv = document.createElement('div');
+        sendDiv.setAttribute('id', 'sendDiv');
+        sendDiv.classList.add('message', 'sent');
+
+        const youText = document.createElement('span');
+        youText.classList.add('you-text');
+        youText.textContent = 'You:'; // Use '\n' to create a line break
+        sendDiv.appendChild(youText);
+
+        const messageText = document.createElement('span');
+        messageText.innerHTML = messageOut;
+        sendDiv.appendChild(messageText);
+
+        logTab.prepend(sendDiv);
+        logTab.scrollTop = logTab.scrollHeight;
+      }
+
+      var auth;
+
+      var sock = new WebSocket('ws://localhost:5001');
+
+      sock.onopen = () => {
+        const name = prompt('Login with username: ');
+        auth = {
+          type: 'name',
+          value: name
+        };
+        sock.send(JSON.stringify(auth));
+      };
+
+      var log = document.getElementById('log');
+      sock.onmessage = (event) => {
+        const msg = JSON.parse(event.data);
+        inMessage(msg.data, msg.name);
+      };
+
+      document.querySelector('button').onclick = () => {
+        var text = document.getElementById('text');
+        const textMsg = {
+          type: 'message',
+          data: text.value
+        };
+        sock.send(JSON.stringify(textMsg));
+        outMessage(textMsg.data);
+        text.value = '';
+        text.style.height = 'auto';
+      }
+
+      document.getElementById('text').addEventListener('input', function () {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight > 3 * 16) ? '3cm' : this.scrollHeight + 'px';
+      });
+    </script>
+  </body>
+</html>
