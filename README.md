@@ -25,12 +25,17 @@ Back-end>>
   4. More graphical features may be included in the front end to make it much beautiful.
 
 # Explanatory screenshots
+1. User is asked to enter a username to login
 ![Login-prompt](https://github.com/Jaweki/Internet_groupChat/assets/97351534/5a6360a6-4414-49ac-93c5-23f51ab2cfcd)
 
+2. For ealier users, they receive a notification of the newly joining user
 ![user-join-notification](https://github.com/Jaweki/Internet_groupChat/assets/97351534/aeccfe48-c6dc-4caa-bb5f-d0a15d59c91d)
 
+3. Sample message exchange in the group chat 
 ![chat-active_1](https://github.com/Jaweki/Internet_groupChat/assets/97351534/4a39e9aa-1d43-43f2-ac66-f6cd1f217b63)
 
+4. Sample message exchange in the group chat
 ![chat-active_2](https://github.com/Jaweki/Internet_groupChat/assets/97351534/4e3948b1-902a-4203-be6f-eb734eb7e376)
 
+5. For connected users, they receive notification of disconnected users.
 ![user-disconnect-notification](https://github.com/Jaweki/Internet_groupChat/assets/97351534/07abfbfd-49d0-4897-9c41-1a70183f5bfa)
