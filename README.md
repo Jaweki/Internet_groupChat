@@ -17,7 +17,7 @@ Back-end>>
     4. Receive and transmit data in Json format.
     5. Announces the joining and disconnect of a client.
 
-# Areas that require Implementation
+# Areas that require extensive Implementations
  1. The software may be advanced to enble media sharing.
  2. A quit/disconnect button may be included in the front-end. and also can a reconnect button.
  3. The software may be implemented too store data such as messages trasacted on a database (preferably MongoDB - its documnet           
