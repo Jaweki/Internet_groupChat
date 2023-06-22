@@ -17,12 +17,14 @@ Back-end>>
     4. Receive and transmit data in Json format.
     5. Announces the joining and disconnect of a client.
 
-#Areas that require Implementation
+# Areas that require Implementation
  1. The software may be advanced to enble media sharing.
  2. A quit/disconnect button may be included in the front-end. and also can a reconnect button.
  3. The software may be implemented too store data such as messages trasacted on a database (preferably MongoDB - its documnet           
      based database).
   4. More graphical features may be included in the front end to make it much beautiful.
+
+# Explanatory screenshots
 ![Login-prompt](https://github.com/Jaweki/Internet_groupChat/assets/97351534/5a6360a6-4414-49ac-93c5-23f51ab2cfcd)
 
 ![user-join-notification](https://github.com/Jaweki/Internet_groupChat/assets/97351534/aeccfe48-c6dc-4caa-bb5f-d0a15d59c91d)
